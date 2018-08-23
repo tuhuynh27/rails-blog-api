@@ -60,3 +60,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# MySQL
+gem 'mysql2'
+
+# JWT
+gem 'knock'
+gem 'jwt'
+
+# Use Rack CORS for handling Cross-Origin Resource Sharing
+gem 'rack-cors'
