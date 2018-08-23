@@ -52,6 +52,6 @@ class Api::V1::BlogsController < Api::ApisController
   end
 
   def blog_params
-    params.permit(:title, :body)
+    params.permit(:title, :body, :image, :description)
   end
 end
