@@ -3,8 +3,19 @@ class Api::V1::BlogsController < Api::ApisController
   before_action :authenticate_user, only: %i[create update destroy]
 
   def index
-    blog = Blog.all
-    render json: blog, status: :ok
+    blog = Blog.page(@page_number || 1)
+               .per(@page_size || 10)
+    render json: {
+      blogs: blog,
+      meta: {
+        pagination: {
+          total_objects: Blog.all.count,
+          per_page: @page_size || 10,
+          total_pages: blog.total_pages,
+          current_page: blog.current_page
+        }
+      }
+    }, status: :ok
   end
 
   def create

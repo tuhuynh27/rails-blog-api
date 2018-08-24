@@ -70,3 +70,8 @@ gem 'jwt'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing
 gem 'rack-cors'
+
+# Paginate resources
+gem 'active_model_serializers'
+gem 'kaminari'
+gem 'pager_api'
