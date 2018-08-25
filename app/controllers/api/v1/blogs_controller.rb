@@ -10,7 +10,7 @@ class Api::V1::BlogsController < Api::ApisController
       meta: {
         pagination: {
           total_objects: Blog.all.count,
-          per_page: @page_size || 10,
+          per_page: @page_size.to_i || 10,
           total_pages: blog.total_pages,
           current_page: blog.current_page
         }
